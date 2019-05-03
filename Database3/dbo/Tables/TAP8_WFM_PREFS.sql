@@ -1,0 +1,10 @@
+﻿CREATE TABLE [dbo].[TAP8_WFM_PREFS] (
+    [CD_LOGIN]      VARCHAR (50)   NOT NULL,
+    [DS_PREFS]      VARCHAR (3072) NOT NULL,
+    [CD_QUERY]      INT            NOT NULL,
+    [CD_DATASOURCE] INT            NOT NULL,
+    [CD_PREFS]      INT            IDENTITY (1, 1) NOT NULL,
+    [CD_PROYECTO]   VARCHAR (10)   NULL,
+    PRIMARY KEY CLUSTERED ([CD_PREFS] ASC)
+);
+

@@ -14,7 +14,7 @@
     </RootPath>
     <RootNamespace>Database3</RootNamespace>
     <AssemblyName>Database3</AssemblyName>
-    <ModelCollation>1033, CI</ModelCollation>
+    <ModelCollation>1033,CI</ModelCollation>
     <DefaultFileStructure>BySchemaAndSchemaType</DefaultFileStructure>
     <DeployToDatabase>True</DeployToDatabase>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
@@ -23,6 +23,8 @@
     <SqlServerVerification>False</SqlServerVerification>
     <IncludeCompositeObjects>True</IncludeCompositeObjects>
     <TargetDatabaseSet>True</TargetDatabaseSet>
+    <DefaultCollation>SQL_Latin1_General_CP1_CI_AS</DefaultCollation>
+    <DefaultFilegroup>PRIMARY</DefaultFilegroup>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <OutputPath>bin\Release\</OutputPath>
@@ -57,5 +59,303 @@
   <Import Condition="'$(SQLDBExtensionsRefPath)' == ''" Project="$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v$(VisualStudioVersion)\SSDT\Microsoft.Data.Tools.Schema.SqlTasks.targets" />
   <ItemGroup>
     <Folder Include="Properties" />
+    <Folder Include="tSQLt\" />
+    <Folder Include="tSQLt\Tables\" />
+    <Folder Include="dbo\" />
+    <Folder Include="dbo\Tables\" />
+    <Folder Include="tSQLt\Views\" />
+    <Folder Include="tSQLt\Functions\" />
+    <Folder Include="tSQLt\Stored Procedures\" />
+    <Folder Include="dbo\Stored Procedures\" />
+    <Folder Include="SQLCop\" />
+    <Folder Include="SQLCop\Stored Procedures\" />
+    <Folder Include="tSQLt\User Defined Types\" />
+    <Folder Include="Assemblies\" />
+    <Folder Include="Security\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Build Include="tSQLt\Tables\Private_NewTestClassList.sql" />
+    <Build Include="tSQLt\Tables\TestResult.sql" />
+    <Build Include="tSQLt\Tables\Private_AssertEqualsTableSchema_Actual.sql" />
+    <Build Include="tSQLt\Tables\Private_AssertEqualsTableSchema_Expected.sql" />
+    <Build Include="tSQLt\Tables\TestMessage.sql" />
+    <Build Include="tSQLt\Tables\Run_LastExecution.sql" />
+    <Build Include="tSQLt\Tables\Private_ExpectException.sql" />
+    <Build Include="tSQLt\Tables\Private_Configurations.sql" />
+    <Build Include="tSQLt\Tables\CaptureOutputLog.sql" />
+    <Build Include="tSQLt\Tables\Private_RenamedObjectLog.sql" />
+    <Build Include="dbo\Tables\TAP8_DSGR_FIELD.sql" />
+    <Build Include="dbo\Tables\TAP8_DSGR_SCREEN.sql" />
+    <Build Include="dbo\Tables\TAP8_GRIDS_GRID.sql" />
+    <Build Include="dbo\Tables\TAP8_GRIDS_GRIDSET.sql" />
+    <Build Include="dbo\Tables\TAP8_GRIDS_GRIDSET_GRIDS.sql" />
+    <Build Include="dbo\Tables\TAP8_NAV_NAVIGATOR.sql" />
+    <Build Include="dbo\Tables\TAP8_NAV_PARAM.sql" />
+    <Build Include="dbo\Tables\TAP8_NAV_QUERY.sql" />
+    <Build Include="dbo\Tables\TAP8_NAV_QUERY_old.sql" />
+    <Build Include="dbo\Tables\TAP8_WFM_BUTTON.sql" />
+    <Build Include="dbo\Tables\TAP8_WFM_COLUMN.sql" />
+    <Build Include="dbo\Tables\TAP8_WFM_CONTEXT.sql" />
+    <Build Include="dbo\Tables\TAP8_WFM_DATASOURCE.sql" />
+    <Build Include="dbo\Tables\TAP8_WFM_DATASOURCE_QUERY.sql" />
+    <Build Include="dbo\Tables\TAP8_WFM_PARAM.sql" />
+    <Build Include="dbo\Tables\TAP8_WFM_PREFS.sql" />
+    <Build Include="dbo\Tables\TAP8_WFM_QUERY.sql" />
+    <Build Include="dbo\Tables\TAP8_WFM_QUERY_BUTTONS.sql" />
+    <Build Include="dbo\Tables\TAP8_WFM_QUERY_COLUMNS.sql" />
+    <Build Include="dbo\Tables\TAP8_WFM_QUERY_GRIDSETS.sql" />
+    <Build Include="dbo\Tables\Test.sql" />
+    <Build Include="tSQLt\Tables\Private_NullCellTable.sql" />
+    <Build Include="tSQLt\Views\Private_SysTypes.sql" />
+    <Build Include="tSQLt\Views\TestClasses.sql" />
+    <Build Include="tSQLt\Views\Tests.sql" />
+    <Build Include="tSQLt\Views\Private_SysIndexes.sql" />
+    <Build Include="tSQLt\Functions\Private_SqlVariantFormatter.sql" />
+    <Build Include="tSQLt\Functions\Private_QuoteClassNameForNewTestClass.sql" />
+    <Build Include="tSQLt\Functions\GetTestResultFormatter.sql" />
+    <Build Include="tSQLt\Functions\Private_GetLastTestNameIfNotProvided.sql" />
+    <Build Include="tSQLt\Functions\Private_GetCleanSchemaName.sql" />
+    <Build Include="tSQLt\Functions\Private_GetCleanObjectName.sql" />
+    <Build Include="tSQLt\Functions\Private_GetOriginalTableName.sql" />
+    <Build Include="tSQLt\Functions\Private_GetQuotedFullName.sql" />
+    <Build Include="tSQLt\Functions\Private_GetSchemaId.sql" />
+    <Build Include="tSQLt\Functions\Private_IsTestClass.sql" />
+    <Build Include="tSQLt\Functions\Private_GetCommaSeparatedColumnList.sql" />
+    <Build Include="tSQLt\Functions\Private_Bin2Hex.sql" />
+    <Build Include="tSQLt\Functions\Private_GetFullTypeName.sql" />
+    <Build Include="tSQLt\Functions\TestCaseSummary.sql" />
+    <Build Include="tSQLt\Functions\Private_ResolveFakeTableNamesForBackwardCompatibility.sql" />
+    <Build Include="tSQLt\Functions\Private_GetOriginalTableInfo.sql" />
+    <Build Include="tSQLt\Functions\F_Num.sql" />
+    <Build Include="tSQLt\Functions\Private_ResolveSchemaName.sql" />
+    <Build Include="tSQLt\Functions\Private_ResolveObjectName.sql" />
+    <Build Include="tSQLt\Functions\Private_ResolveName.sql" />
+    <Build Include="tSQLt\Functions\Private_GetExternalAccessKeyBytes.sql" />
+    <Build Include="tSQLt\Functions\Private_GetConfiguration.sql" />
+    <Build Include="tSQLt\Functions\Private_SqlVersion.sql" />
+    <Build Include="tSQLt\Functions\Info.sql" />
+    <Build Include="tSQLt\Functions\Private_ScriptIndex.sql" />
+    <Build Include="tSQLt\Functions\Private_GetForeignKeyParColumns.sql" />
+    <Build Include="tSQLt\Functions\Private_GetForeignKeyRefColumns.sql" />
+    <Build Include="tSQLt\Functions\Private_GetForeignKeyDefinition.sql" />
+    <Build Include="tSQLt\Functions\Private_GetQuotedTableNameForConstraint.sql" />
+    <Build Include="tSQLt\Functions\Private_FindConstraint.sql" />
+    <Build Include="tSQLt\Functions\Private_ResolveApplyConstraintParameters.sql" />
+    <Build Include="tSQLt\Functions\Private_GetConstraintType.sql" />
+    <Build Include="tSQLt\Functions\Private_GetDataTypeOrComputedColumnDefinition.sql" />
+    <Build Include="tSQLt\Functions\Private_GetIdentityDefinition.sql" />
+    <Build Include="tSQLt\Functions\Private_GetDefaultConstraintDefinition.sql" />
+    <Build Include="tSQLt\Functions\Private_GetUniqueConstraintDefinition.sql" />
+    <Build Include="tSQLt\Stored Procedures\AssertObjectDoesNotExist.sql" />
+    <Build Include="tSQLt\Stored Procedures\DropClass.sql" />
+    <Build Include="tSQLt\Stored Procedures\AssertEqualsString.sql" />
+    <Build Include="tSQLt\Stored Procedures\AssertEqualsTable.sql" />
+    <Build Include="tSQLt\Stored Procedures\StubRecord.sql" />
+    <Build Include="tSQLt\Stored Procedures\AssertLike.sql" />
+    <Build Include="tSQLt\Stored Procedures\Private_ResetNewTestClassList.sql" />
+    <Build Include="tSQLt\Stored Procedures\AssertNotEquals.sql" />
+    <Build Include="tSQLt\Stored Procedures\AssertEmptyTable.sql" />
+    <Build Include="tSQLt\Stored Procedures\Private_DisallowOverwritingNonTestSchema.sql" />
+    <Build Include="tSQLt\Stored Procedures\ApplyTrigger.sql" />
+    <Build Include="tSQLt\Stored Procedures\Private_ValidateObjectsCompatibleWithFakeFunction.sql" />
+    <Build Include="tSQLt\Stored Procedures\Private_MarkSchemaAsTestClass.sql" />
+    <Build Include="tSQLt\Stored Procedures\Private_CreateFakeFunction.sql" />
+    <Build Include="tSQLt\Stored Procedures\NewTestClass.sql" />
+    <Build Include="tSQLt\Stored Procedures\FakeFunction.sql" />
+    <Build Include="tSQLt\Stored Procedures\Fail.sql" />
+    <Build Include="tSQLt\Stored Procedures\RenameClass.sql" />
+    <Build Include="dbo\Stored Procedures\cnf_Actualiza_Componente.sql" />
+    <Build Include="tSQLt\Stored Procedures\AssertEqualsTableSchema.sql" />
+    <Build Include="dbo\Stored Procedures\cnf_Donde_se_Usa.sql" />
+    <Build Include="dbo\Stored Procedures\cnf_sp_Asociar_Columna.sql" />
+    <Build Include="tSQLt\Stored Procedures\AssertStringIn.sql" />
+    <Build Include="dbo\Stored Procedures\cnf_sp_Busca_Botonos_En_Script.sql" />
+    <Build Include="tSQLt\Stored Procedures\Reset.sql" />
+    <Build Include="tSQLt\Stored Procedures\Private_Print.sql" />
+    <Build Include="dbo\Stored Procedures\cnf_sp_Delete_Column.sql" />
+    <Build Include="SQLCop\Stored Procedures\test Database Mail.sql" />
+    <Build Include="tSQLt\Stored Procedures\Private_PrintXML.sql" />
+    <Build Include="dbo\Stored Procedures\cnf_sp_Delete_Contexto.sql" />
+    <Build Include="SQLCop\Stored Procedures\test Max degree of parallelism.sql" />
+    <Build Include="tSQLt\Stored Procedures\GetNewTranName.sql" />
+    <Build Include="dbo\Stored Procedures\cnf_sp_Delete_DataSource.sql" />
+    <Build Include="SQLCop\Stored Procedures\test Procedures using dynamic SQL without sp_executesql.sql" />
+    <Build Include="tSQLt\Stored Procedures\SetTestResultFormatter.sql" />
+    <Build Include="dbo\Stored Procedures\cnf_sp_Delete_Field.sql" />
+    <Build Include="SQLCop\Stored Procedures\test Views with order by.sql" />
+    <Build Include="dbo\Stored Procedures\cnf_sp_Delete_Grid.sql" />
+    <Build Include="SQLCop\Stored Procedures\test Column Name Problems.sql" />
+    <Build Include="tSQLt\Stored Procedures\Private_OutputTestResults.sql" />
+    <Build Include="dbo\Stored Procedures\cnf_sp_Delete_Navy.sql" />
+    <Build Include="SQLCop\Stored Procedures\test Page life expectancy.sql" />
+    <Build Include="dbo\Stored Procedures\cnf_sp_Delete_Navy_Querys.sql" />
+    <Build Include="SQLCop\Stored Procedures\test Procedures with %40%40Identity.sql" />
+    <Build Include="tSQLt\Stored Procedures\Private_SaveTestNameForSession.sql" />
+    <Build Include="dbo\Stored Procedures\cnf_sp_Eliminar_Boton.sql" />
+    <Build Include="SQLCop\Stored Procedures\test SMO and DMO.sql" />
+    <Build Include="dbo\Stored Procedures\cnf_sp_Insert_Button.sql" />
+    <Build Include="SQLCop\Stored Procedures\test Tables without any data.sql" />
+    <Build Include="dbo\Stored Procedures\cnf_sp_Insert_Column.sql" />
+    <Build Include="SQLCop\Stored Procedures\test Auto Shrink.sql" />
+    <Build Include="dbo\Stored Procedures\cnf_sp_Insert_Contexto.sql" />
+    <Build Include="SQLCop\Stored Procedures\test Unnamed Constraints.sql" />
+    <Build Include="tSQLt\Stored Procedures\Private_ValidateProcedureCanBeUsedWithSpyProcedure.sql" />
+    <Build Include="dbo\Stored Procedures\cnf_sp_Insert_DataSource.sql" />
+    <Build Include="SQLCop\Stored Procedures\test Procedures Named SP_.sql" />
+    <Build Include="tSQLt\Stored Procedures\AssertEquals.sql" />
+    <Build Include="dbo\Stored Procedures\cnf_sp_Insert_Field.sql" />
+    <Build Include="SQLCop\Stored Procedures\test Procedures without SET NOCOUNT ON.sql" />
+    <Build Include="dbo\Stored Procedures\cnf_sp_Insert_Grid.sql" />
+    <Build Include="SQLCop\Stored Procedures\test Decimal Size Problem.sql" />
+    <Build Include="dbo\Stored Procedures\cnf_sp_Insert_Navy.sql" />
+    <Build Include="SQLCop\Stored Procedures\test Columns with float data type.sql" />
+    <Build Include="dbo\Stored Procedures\cnf_sp_Insert_Navy_Querys.sql" />
+    <Build Include="SQLCop\Stored Procedures\test Fragmented Indexes.sql" />
+    <Build Include="dbo\Stored Procedures\cnf_sp_Lista_Botonos_Huerfanos.sql" />
+    <Build Include="SQLCop\Stored Procedures\test Missing Foreign Key Indexes.sql" />
+    <Build Include="dbo\Stored Procedures\cnf_sp_Lista_Columnas.sql" />
+    <Build Include="SQLCop\Stored Procedures\test Tables that start with tbl.sql" />
+    <Build Include="dbo\Stored Procedures\cnf_sp_Lista_Columnas_DataSource.sql" />
+    <Build Include="SQLCop\Stored Procedures\test Buffer cache hit ratio.sql" />
+    <Build Include="tSQLt\Stored Procedures\Private_SetFakeViewOn_SingleView.sql" />
+    <Build Include="dbo\Stored Procedures\cnf_sp_Lista_Contextos.sql" />
+    <Build Include="SQLCop\Stored Procedures\test Service Account.sql" />
+    <Build Include="tSQLt\Stored Procedures\SetFakeViewOn.sql" />
+    <Build Include="dbo\Stored Procedures\cnf_sp_Lista_DataSource_Screens.sql" />
+    <Build Include="SQLCop\Stored Procedures\test Forwarded Records.sql" />
+    <Build Include="tSQLt\Stored Procedures\Private_SetFakeViewOff_SingleView.sql" />
+    <Build Include="dbo\Stored Procedures\cnf_sp_Lista_DataSources.sql" />
+    <Build Include="SQLCop\Stored Procedures\test Agent Service.sql" />
+    <Build Include="tSQLt\Stored Procedures\SetFakeViewOff.sql" />
+    <Build Include="dbo\Stored Procedures\cnf_sp_Lista_Fields.sql" />
+    <Build Include="SQLCop\Stored Procedures\test xp_cmdshell is enabled.sql" />
+    <Build Include="dbo\Stored Procedures\cnf_sp_Lista_Grid.sql" />
+    <Build Include="SQLCop\Stored Procedures\test Columns with image data type.sql" />
+    <Build Include="dbo\Stored Procedures\cnf_sp_Lista_Iconos_Usados.sql" />
+    <Build Include="SQLCop\Stored Procedures\test Column collation does not match database default.sql" />
+    <Build Include="dbo\Stored Procedures\cnf_sp_Lista_Navy.sql" />
+    <Build Include="SQLCop\Stored Procedures\test UniqueIdentifier with NewId.sql" />
+    <Build Include="dbo\Stored Procedures\cnf_sp_Lista_Navy_Querys.sql" />
+    <Build Include="SQLCop\Stored Procedures\test Ole Automation Procedures.sql" />
+    <Build Include="dbo\Stored Procedures\cnf_sp_Lista_Pantallas.sql" />
+    <Build Include="SQLCop\Stored Procedures\test Auto close.sql" />
+    <Build Include="dbo\Stored Procedures\cnf_sp_Lista_Screens.sql" />
+    <Build Include="SQLCop\Stored Procedures\test Tables without a primary key.sql" />
+    <Build Include="tSQLt\Stored Procedures\Uninstall.sql" />
+    <Build Include="dbo\Stored Procedures\cnf_sp_Quitar_Boton.sql" />
+    <Build Include="SQLCop\Stored Procedures\test Ad hoc distributed queries.sql" />
+    <Build Include="dbo\Stored Procedures\cnf_sp_Quitar_Columna.sql" />
+    <Build Include="SQLCop\Stored Procedures\test Wide Table.sql" />
+    <Build Include="tSQLt\Stored Procedures\RemoveExternalAccessKey.sql" />
+    <Build Include="dbo\Stored Procedures\cnf_sp_Relacionar_Boton.sql" />
+    <Build Include="SQLCop\Stored Procedures\test Database and Log files on the same disk.sql" />
+    <Build Include="tSQLt\Stored Procedures\InstallExternalAccessKey.sql" />
+    <Build Include="dbo\Stored Procedures\cnf_sp_Update_Button.sql" />
+    <Build Include="SQLCop\Stored Procedures\test User Aliases.sql" />
+    <Build Include="tSQLt\Stored Procedures\EnableExternalAccess.sql" />
+    <Build Include="dbo\Stored Procedures\cnf_sp_Update_Column.sql" />
+    <Build Include="SQLCop\Stored Procedures\test Table name problems.sql" />
+    <Build Include="dbo\Stored Procedures\cnf_sp_Update_Contexto.sql" />
+    <Build Include="SQLCop\Stored Procedures\test Auto create statistics.sql" />
+    <Build Include="dbo\Stored Procedures\cnf_sp_Update_DataSource.sql" />
+    <Build Include="SQLCop\Stored Procedures\test Varchar Size Problem.sql" />
+    <Build Include="tSQLt\Stored Procedures\Private_SetConfiguration.sql" />
+    <Build Include="dbo\Stored Procedures\cnf_sp_Update_Field.sql" />
+    <Build Include="SQLCop\Stored Procedures\test Database collation.sql" />
+    <Build Include="dbo\Stored Procedures\cnf_sp_Update_Grid.sql" />
+    <Build Include="SQLCop\Stored Procedures\test Auto update statistics.sql" />
+    <Build Include="tSQLt\Stored Procedures\SetVerbose.sql" />
+    <Build Include="dbo\Stored Procedures\cnf_sp_Update_Navy.sql" />
+    <Build Include="SQLCop\Stored Procedures\test Old Backups.sql" />
+    <Build Include="dbo\Stored Procedures\cnf_sp_Update_Navy_Querys.sql" />
+    <Build Include="SQLCop\Stored Procedures\test Columns of data type Text_nText.sql" />
+    <Build Include="dbo\Stored Procedures\cnf_sp_Update_SCREEN.sql" />
+    <Build Include="SQLCop\Stored Procedures\test Procedures With SET ROWCOUNT.sql" />
+    <Build Include="tSQLt\Stored Procedures\LogCapturedOutput.sql" />
+    <Build Include="dbo\Stored Procedures\SP_OBTENER_FILTRO.sql" />
+    <Build Include="SQLCop\Stored Procedures\test Login Language.sql" />
+    <Build Include="dbo\Stored Procedures\SP_OBTENER_NAVIGATOR.sql" />
+    <Build Include="SQLCop\Stored Procedures\test Orphaned Users.sql" />
+    <Build Include="dbo\Stored Procedures\SP_OBTENER_PARAM.sql" />
+    <Build Include="SQLCop\Stored Procedures\test Procedures that call undocumented procedures.sql" />
+    <Build Include="dbo\Stored Procedures\SP_SINCRONIZAR_HAMBIENTES.sql" />
+    <Build Include="SQLCop\Stored Procedures\test Missing Foreign Keys.sql" />
+    <Build Include="dbo\Stored Procedures\SP_TEST_01.sql" />
+    <Build Include="SQLCop\Stored Procedures\test Column data types _Numeric vs. Int_.sql" />
+    <Build Include="dbo\Stored Procedures\SP_VALIDAR_ACTUALIZACION.sql" />
+    <Build Include="SQLCop\Stored Procedures\test Instant File Initialization.sql" />
+    <Build Include="tSQLt\Stored Procedures\TableToText.sql" />
+    <Build Include="dbo\Stored Procedures\UTIL_GETINSPECTORCOMPONENTS.sql" />
+    <Build Include="SQLCop\Stored Procedures\test Compatibility Level.sql" />
+    <Build Include="tSQLt\Stored Procedures\Private_MarkObjectBeforeRename.sql" />
+    <Build Include="tSQLt\Stored Procedures\Private_RenameObjectToUniqueName.sql" />
+    <Build Include="tSQLt\Stored Procedures\Private_RenameObjectToUniqueNameUsingObjectId.sql" />
+    <Build Include="tSQLt\Stored Procedures\RemoveObject.sql" />
+    <Build Include="tSQLt\Stored Procedures\RemoveObjectIfExists.sql" />
+    <Build Include="tSQLt\Stored Procedures\Private_CleanTestResult.sql" />
+    <Build Include="tSQLt\Stored Procedures\Private_Init.sql" />
+    <Build Include="tSQLt\Stored Procedures\Private_GetSetupProcedureName.sql" />
+    <Build Include="tSQLt\Stored Procedures\Private_RunTest.sql" />
+    <Build Include="tSQLt\Stored Procedures\Private_RunTestClass.sql" />
+    <Build Include="tSQLt\Stored Procedures\Private_Run.sql" />
+    <Build Include="tSQLt\Stored Procedures\Private_RunCursor.sql" />
+    <Build Include="tSQLt\Stored Procedures\Private_GetCursorForRunAll.sql" />
+    <Build Include="tSQLt\Stored Procedures\Private_RunAll.sql" />
+    <Build Include="tSQLt\Stored Procedures\Private_GetCursorForRunNew.sql" />
+    <Build Include="tSQLt\Stored Procedures\Private_RunNew.sql" />
+    <Build Include="tSQLt\Stored Procedures\Private_RunMethodHandler.sql" />
+    <Build Include="tSQLt\Stored Procedures\RunAll.sql" />
+    <Build Include="tSQLt\Stored Procedures\RunNew.sql" />
+    <Build Include="tSQLt\Stored Procedures\RunTest.sql" />
+    <Build Include="tSQLt\Stored Procedures\Run.sql" />
+    <Build Include="tSQLt\Stored Procedures\Private_InputBuffer.sql" />
+    <Build Include="tSQLt\Stored Procedures\RunC.sql" />
+    <Build Include="tSQLt\Stored Procedures\RunWithXmlResults.sql" />
+    <Build Include="tSQLt\Stored Procedures\RunWithNullResults.sql" />
+    <Build Include="tSQLt\Stored Procedures\DefaultResultFormatter.sql" />
+    <Build Include="tSQLt\Stored Procedures\XmlResultFormatter.sql" />
+    <Build Include="tSQLt\Stored Procedures\NullTestResultFormatter.sql" />
+    <Build Include="tSQLt\Stored Procedures\RunTestClass.sql" />
+    <Build Include="tSQLt\Stored Procedures\ExpectException.sql" />
+    <Build Include="tSQLt\Stored Procedures\ExpectNoException.sql" />
+    <Build Include="tSQLt\Stored Procedures\Private_RemoveSchemaBinding.sql" />
+    <Build Include="tSQLt\Stored Procedures\Private_RemoveSchemaBoundReferences.sql" />
+    <Build Include="tSQLt\Stored Procedures\Private_ApplyCheckConstraint.sql" />
+    <Build Include="tSQLt\Stored Procedures\Private_ApplyForeignKeyConstraint.sql" />
+    <Build Include="tSQLt\Stored Procedures\Private_ApplyUniqueConstraint.sql" />
+    <Build Include="tSQLt\Stored Procedures\ApplyConstraint.sql" />
+    <Build Include="tSQLt\Stored Procedures\Private_ValidateFakeTableParameters.sql" />
+    <Build Include="tSQLt\Stored Procedures\Private_CreateFakeOfTable.sql" />
+    <Build Include="tSQLt\Stored Procedures\Private_MarkFakeTable.sql" />
+    <Build Include="tSQLt\Stored Procedures\FakeTable.sql" />
+    <Build Include="tSQLt\Stored Procedures\Private_CreateProcedureSpy.sql" />
+    <Build Include="tSQLt\Stored Procedures\SpyProcedure.sql" />
+    <Build Include="tSQLt\Stored Procedures\Private_CreateResultTableForCompareTables.sql" />
+    <Build Include="tSQLt\Stored Procedures\Private_ValidateThatAllDataTypesInTableAreSupported.sql" />
+    <Build Include="tSQLt\Stored Procedures\Private_CompareTablesFailIfUnequalRowsExists.sql" />
+    <Build Include="tSQLt\Stored Procedures\Private_CompareTables.sql" />
+    <Build Include="tSQLt\Stored Procedures\AssertObjectExists.sql" />
+    <Build Include="tSQLt\Stored Procedures\ResultSetFilter.sql" />
+    <Build Include="tSQLt\Stored Procedures\AssertResultSetsHaveSameMetaData.sql" />
+    <Build Include="tSQLt\Stored Procedures\NewConnection.sql" />
+    <Build Include="tSQLt\Stored Procedures\CaptureOutput.sql" />
+    <Build Include="tSQLt\Stored Procedures\SuppressOutput.sql" />
+    <Build Include="tSQLt\User Defined Types\Private.sql" />
+    <Build Include="tSQLt\User Defined Types\AssertStringTable.sql" />
+    <Build Include="Security\SQLCop.sql" />
+    <Build Include="Security\tSQLt.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Assemblies\tSQLtCLR.dll" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="tSQLtCLR">
+      <HintPath>Assemblies\tSQLtCLR.dll</HintPath>
+      <SqlAssemblyName>tSQLtCLR</SqlAssemblyName>
+      <IsModelAware>True</IsModelAware>
+      <GenerateSqlClrDdl>False</GenerateSqlClrDdl>
+      <SqlOwnerName>dbo</SqlOwnerName>
+      <SqlPermissionSet>SAFE</SqlPermissionSet>
+    </Reference>
   </ItemGroup>
 </Project>

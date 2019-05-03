@@ -1,0 +1,34 @@
+﻿CREATE  PROCEDURE [dbo].[cnf_sp_Delete_Navy_Querys] (
+@CDQUERY				int  out,
+@Mensaje				varchar(500) out
+)
+
+as
+
+
+DECLARE  @Conta int
+
+
+SET @Mensaje = ''
+
+IF @CDQUERY = '' BEGIN
+	SET @Mensaje = @Mensaje + 'NO HA SELECCIONADO EL QUERY QUE DESEA ELIMINAR'
+	RETURN
+END
+
+
+SELECT @Conta = COUNT(*) FROM TAP8_NAV_QUERY WHERE CDQUERY = @CDQUERY
+
+IF @Conta = 0 BEGIN
+	SET @Mensaje = @Mensaje + 'NO EXISTE EL NAVEGADOR QUE DESEA ELIMINAR'
+	RETURN
+END
+
+
+
+DELETE FROM  TAP8_NAV_QUERY 
+WHERE 
+CDQUERY = @CDQUERY
+
+
+
