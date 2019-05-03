@@ -1,0 +1,24 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "Database3", "Database3\Database3.sqlproj", "{3840A0A2-8177-4EAC-8850-6B1F53930482}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{3840A0A2-8177-4EAC-8850-6B1F53930482}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3840A0A2-8177-4EAC-8850-6B1F53930482}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3840A0A2-8177-4EAC-8850-6B1F53930482}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{3840A0A2-8177-4EAC-8850-6B1F53930482}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3840A0A2-8177-4EAC-8850-6B1F53930482}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3840A0A2-8177-4EAC-8850-6B1F53930482}.Release|Any CPU.Deploy.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
